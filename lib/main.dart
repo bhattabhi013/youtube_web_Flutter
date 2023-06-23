@@ -40,7 +40,7 @@ class YoutubeView extends StatefulWidget {
 
 class _YoutubeViewState extends State<YoutubeView> {
   final _controller = YoutubePlayerController.fromVideoId(
-    videoId: '8fwdHMuvKTc',
+    videoId: '8fwdHMuvKTc', //id of video you want to run
     autoPlay: false,
     params: const YoutubePlayerParams(showFullscreenButton: true),
   );
@@ -51,7 +51,7 @@ class _YoutubeViewState extends State<YoutubeView> {
         appBar: AppBar(
           title: Text("youtube view"),
         ),
-        body: (kIsWeb)
+        body: (kIsWeb) // flag to check if app is running on web browser
             ? SingleChildScrollView(
                 child: Center(
                   child: Container(
@@ -64,7 +64,9 @@ class _YoutubeViewState extends State<YoutubeView> {
                   ),
                 ),
               )
-            : Container(
+            :
+            // code for mobile (IoS/ Android)
+            Container(
                 child: Center(child: Text("hello! on mobile")),
               ));
   }
